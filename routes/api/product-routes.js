@@ -8,12 +8,6 @@ router.get('/', (req, res) => {
   // find all products
   // be sure to include its associated Category and Tag data
   Product.findAll({
-    attributes: [
-      'id', 
-      'product_name', 
-      'price', 
-      'stock'
-    ],
     include: [
       Category,
       {
@@ -65,6 +59,7 @@ router.post('/', (req, res) => {
       product_name: "Basketball",
       price: 200.00,
       stock: 3,
+      category_id: 1
       tagIds: [1, 2, 3, 4]
     }
   */
